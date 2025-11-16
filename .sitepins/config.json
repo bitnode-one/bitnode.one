@@ -1,0 +1,15 @@
+{
+  "media": {
+    "root": "cms_media_root",
+    "public": "cms_media_public"
+  },
+  "content": {
+    "root": "cms_content"
+  },
+  "code": {
+    "root": "cms_components"
+  },
+  "themeConfig": [],
+  "arrangement": [],
+  "showCommitModal": true
+}
