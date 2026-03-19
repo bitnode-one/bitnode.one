@@ -1,0 +1,6 @@
+baseURL: 'https://bitnode.one/'
+title: 'Bitnode One ⚡'
+languageCode: 'en'
+build:
+  buildStats:
+    enable: true
