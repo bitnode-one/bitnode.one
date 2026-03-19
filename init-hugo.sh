@@ -4,7 +4,7 @@ hugo new site . --force
 # Hugo config for GitHub Pages + custom domain
 cat > hugo.yaml << 'EOC'
 baseURL: "https://bitnode.one/"
-title: "Bitnode One ⚡"
+title: "bitnode.one⚡"
 languageCode: "en"
 theme: "none"  # we use plain Tailwind
 build:
@@ -19,7 +19,7 @@ EOC
 mkdir -p content layouts/partials assets/css
 cat > content/_index.md << 'EOC'
 ---
-title: "Bitnode One ⚡"
+title: "bitnode.one⚡"
 ---
 <!-- Full one-pager HTML from our preview (pasted as markdown for Hugo) -->
 {{ partial "head.html" . }}
