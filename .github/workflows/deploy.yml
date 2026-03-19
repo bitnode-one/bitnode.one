@@ -1,7 +1,14 @@
 name: Deploy to bitnode.one
+
 on:
   push:
     branches: [ main ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,10 +19,12 @@ jobs:
           hugo-version: 'latest'
           extended: true
       - run: npm ci
-      - run: hugo --minify --destination public
-      - run: touch public/.nojekyll
-      - uses: peaceiris/actions-gh-pages@v4
+      - name: Build
+        run: hugo --minify --destination public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           cname: bitnode.one
+          force_orphan: true   # ← this forces clean publish
