@@ -1,5 +1,5 @@
 baseURL: 'https://bitnode.one/'
-title: 'Bitnode One ⚡'
+title: 'bitnode.one⚡'
 languageCode: 'en'
 build:
   buildStats:
