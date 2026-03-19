@@ -1,36 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bitnode One ⚡</title>
+  <title>bitnode.one ⚡</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>body{font-family:system-ui,sans-serif}</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+  </style>
 </head>
+
 <body class="bg-black text-white">
+  <!-- HERO -->
   <section class="min-h-screen flex items-center justify-center text-center px-6 py-24 bg-gradient-to-b from-black to-zinc-950">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-7xl md:text-8xl font-bold tracking-tighter mb-6">Bitnode One ⚡</h1>
-      <p class="text-4xl md:text-5xl font-light text-orange-400 mb-8">Sovereign Bitcoin infrastructure for the agentic era</p>
-      <p class="text-xl md:text-2xl max-w-2xl mx-auto text-gray-300 mb-12">Bridging decentralized open-source Agentic AI with the strongest mainnet + Lightning scaling.<br>Privacy by design. No KYC. Code is law.</p>
+      <h1 class="text-7xl md:text-8xl font-bold tracking-tighter mb-6">bitnode.one ⚡</h1>
+      <p class="text-4xl md:text-5xl font-light text-orange-400 mb-8">Sovereign Bitcoin infrastructure for the Agentic AI era</p>
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto text-gray-300 mb-12">
+        Bridging decentralized open-source Agentic AI with the strongest mainnet + Lightning scaling.<br>
+        Privacy by design. No KYC. Code is law.
+      </p>
+
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#services" class="bg-orange-500 hover:bg-orange-600 text-black font-semibold text-lg px-10 py-5 rounded-2xl">Get Audited</a>
-        <a href="https://x.com/bitnode_one" class="border border-orange-400 hover:border-orange-300 text-orange-400 font-medium text-lg px-10 py-5 rounded-2xl">Follow on X →</a>
+        <a href="#services" class="bg-orange-500 hover:bg-orange-600 text-black font-semibold text-lg px-10 py-5 rounded-2xl transition-all">Get Audited</a>
+        <a href="https://x.com/bitnode_one" target="_blank" class="border border-orange-400 hover:border-orange-300 text-orange-400 font-medium text-lg px-10 py-5 rounded-2xl transition-all">Follow on X →</a>
       </div>
+
       <p class="mt-16 text-sm text-gray-500">Max Peter • Cypherpunk entrepreneur • open blockchain analyst, auditor & researcher</p>
     </div>
   </section>
-  <section id="services" class="py-24 bg-black">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold mb-8">What I Deliver</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-zinc-900 p-6 rounded-3xl">Sovereign Nodes + Decentralized Mining</div>
-        <div class="bg-zinc-900 p-6 rounded-3xl">Agentic AI Security Audits</div>
-        <div class="bg-zinc-900 p-6 rounded-3xl">Data Science • Analysis • Speaking</div>
+
+  <!-- MISSION -->
+  <section class="py-24 bg-zinc-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-12 text-orange-400">The Convergence</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8 text-lg">
+          <div class="flex gap-4">
+            <span class="text-orange-400 text-3xl">→</span>
+            <div>Autonomous agents executing goals, payments, and ops — on your own node</div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-orange-400 text-3xl">→</span>
+            <div>Verifiable execution on Bitcoin mainnet + Lightning (L2/L3) scaling</div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-orange-400 text-3xl">→</span>
+            <div>Privacy-first: ZK proofs, no data leaks, no centralized choke points</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="inline-block bg-zinc-900 p-12 rounded-3xl border border-orange-500/30">
+            <div class="font-mono text-7xl text-orange-400 tracking-widest"></div>
+            <div class="text-8xl font-bold tracking-tighter">bitnode.one</div>
+            <p class="mt-8 text-xs uppercase tracking-widest text-gray-500">The only base layer that cannot be censored</p>
+          </div>
+        </div>
       </div>
-      <a href="mailto:max@bitnode.one" class="mt-8 inline-block bg-orange-500 text-black px-10 py-4 rounded-2xl font-bold">Book an Audit → max@bitnode.one</a>
     </div>
   </section>
-  <footer class="py-12 text-center text-gray-500">© 2026 Bitnode One • @bitnode_one • max@bitnode.one • All nodes sovereign</footer>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 bg-black">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16">What I Deliver</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-zinc-900 p-10 rounded-3xl hover:border-orange-500/50 border border-transparent transition-all">
+          <h3 class="text-2xl font-semibold mb-4">Sovereign Node Infrastructure</h3>
+          <p class="text-gray-400">Full node setup, decentralized mining guidance, Lightning scaling for Agentic AI workloads.</p>
+        </div>
+        <div class="bg-zinc-900 p-10 rounded-3xl hover:border-orange-500/50 border border-transparent transition-all">
+          <h3 class="text-2xl font-semibold mb-4">Agentic AI Security Audits</h3>
+          <p class="text-gray-400">Privacy & cybersecurity reviews at the exact intersection of open-source AI Agents and Bitcoin node infrastructure.</p>
+        </div>
+        <div class="bg-zinc-900 p-10 rounded-3xl hover:border-orange-500/50 border border-transparent transition-all">
+          <h3 class="text-2xl font-semibold mb-4">Research & Speaking</h3>
+          <p class="text-gray-400">political data science, open blockchain analysis, compliance reports, and keynotes on the Agentic AI future.</p>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="mailto:max@bitnode.one" class="bg-white text-black font-semibold text-lg px-12 py-5 rounded-2xl hover:bg-orange-400 transition-all">Book an Audit or Collab</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-20 bg-zinc-950 border-t border-b border-orange-500/20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-12">#CodeIsLaw</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <div class="px-8 py-4 border border-orange-400/30 rounded-full text-lg">No KYC</div>
+        <div class="px-8 py-4 border border-orange-400/30 rounded-full text-lg">Decentralize Everything</div>
+        <div class="px-8 py-4 border border-orange-400/30 rounded-full text-lg">Run Your Own Nodes</div>
+        <div class="px-8 py-4 border border-orange-400/30 rounded-full text-lg">Own Your AI Agents</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 bg-black text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-light mb-6">Ready to secure your agents on sovereign Bitcoin?</h2>
+      <p class="text-xl text-gray-400 mb-10">Reach out on X, Nostr, or email.</p>
+      <div class="flex flex-col sm:flex-row gap-8 justify-center text-lg font-medium">
+        <a href="https://x.com/bitnode_one" class="hover:text-orange-400 transition-colors">@bitnode_one on X</a>
+        <a href="https://njump.me/bitmax@bitnode.one" class="hover:text-orange-400 transition-colors">max@bitnode.one on Nostr</a>
+        <a href="mailto:max@bitnode.one" class="hover:text-orange-400 transition-colors">max@bitnode.one</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center text-xs text-gray-600 border-t border-zinc-900">
+    © 2026 bitnode.one LLC • Built with Hugo on GitHub • All Nodes Sovereign
+  </footer>
+
+  <script>
+    // Auto-init Tailwind (for the CDN version)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tailwind browser script auto-applies
+    });
+  </script>
 </body>
+
 </html>
