@@ -1,3 +1,3 @@
 ---
-title: "Bitnode One ⚡"
+title: bitnode.one ⚡
 ---
