@@ -1,11 +1,77 @@
-media: media
+# .pages.yml
+media:
+  input: static/media
+  output: /media
+
 content:
-  - name: pages
-    label: Pages
-    type: collection
-    path: docs
+  - name: home
+    label: Homepage
+    type: file
+    path: content/_index.md
+    format: yaml-frontmatter
     fields:
       - name: title
+        label: Page Title
         type: string
+
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Headline
+            type: string
+          - name: subtitle
+            label: Subtitle
+            type: string
+          - name: body
+            label: Intro Text
+            type: text
+
+      - name: services
+        label: Services
+        type: object
+        fields:
+          - name: title
+            label: Section Title
+            type: string
+          - name: items
+            label: Service Items
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: body
+                label: Description
+                type: text
+
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - name: title
+            label: Section Title
+            type: string
+          - name: body
+            label: Contact Text
+            type: text
+
+      - name: links
+        label: Links
+        type: object
+        fields:
+          - name: x
+            label: X URL
+            type: string
+          - name: nostr
+            label: Nostr URL
+            type: string
+          - name: email
+            label: Email
+            type: string
+
       - name: body
+        label: Main Content
         type: rich-text
