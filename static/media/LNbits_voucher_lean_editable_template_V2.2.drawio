@@ -22,9 +22,6 @@
         <mxCell id="2hhm6XG4uvfQ6ih6qjEM-830" edge="1" parent="1" source="2hhm6XG4uvfQ6ih6qjEM-829" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="2hhm6XG4uvfQ6ih6qjEM-829">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5U3Y1W9NPC7yJ94F9rhu-149" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="" vertex="1">
-          <mxGeometry height="60" width="270" x="1710" y="20" as="geometry" />
-        </mxCell>
         <mxCell id="2" parent="0" value="Teal pattern modules" />
         <mxCell id="2hhm6XG4uvfQ6ih6qjEM-821" connectable="0" parent="2" style="group" value="" vertex="1">
           <mxGeometry height="400" width="800" x="1160" y="130" as="geometry" />
