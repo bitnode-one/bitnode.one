@@ -5,6 +5,14 @@ MAJOR = route/structure break, MINOR = visible content or design, PATCH = fixes 
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-10-14
+
+### Fixed
+- Deploy dropped all dot-paths: `actions/upload-pages-artifact` excludes hidden files by default, so
+  `/.well-known/nostr.json` and Pages-hosted `/.well-known/lnurlp/*` returned 404 after 0.3.0
+  (2026-10-14 19:16–~19:45 UTC). Set `include-hidden-files: true`.
+- Deploy job now runs a live smoke test (version, nostr.json, LNURL fallback and LNbits route) and fails loudly.
+
 ## [0.4.0] - 2026-10-14
 
 ### Changed

@@ -33,6 +33,7 @@ jobs:
         if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
         with:
           path: dist/site
+          include-hidden-files: true   # REQUIRED: ships /.well-known (NIP-05, LNURL fallbacks)
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
@@ -46,3 +47,16 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Smoke test live routes
+        run: |
+          set -eu
+          sleep 20
+          ver=$(cat VERSION)
+          for i in 1 2 3 4 5 6; do
+            curl -fsS "https://bitnode.one/?cb=$GITHUB_RUN_ID-$i" | grep -q "bitnode-site $ver" && break
+            [ "$i" = 6 ] && { echo "version $ver not live"; exit 1; }; sleep 15
+          done
+          curl -fsS https://bitnode.one/.well-known/nostr.json | python3 -c "import json,sys; assert json.load(sys.stdin)['names']"
+          curl -fsS https://bitnode.one/.well-known/lnurlp/albihub | grep -q payRequest
+          curl -fsS https://bitnode.one/.well-known/lnurlp/bitmax  | grep -q payRequest
+          echo "smoke OK"
