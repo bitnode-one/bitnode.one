@@ -1,0 +1,166 @@
+{
+  "schema": 2,
+  "comment": "Declarative build plan. Output = f(files listed here, VERSION, git commit). Nothing else enters dist/.",
+  "out_dir": "dist/site",
+  "steps": [
+    {
+      "op": "template",
+      "from": "src/index.html",
+      "to": "index.html"
+    },
+    {
+      "op": "copy",
+      "from": "src/site.webmanifest",
+      "to": "site.webmanifest"
+    },
+    {
+      "op": "copy",
+      "from": "src/CNAME",
+      "to": "CNAME"
+    },
+    {
+      "op": "copy",
+      "from": "src/.nojekyll",
+      "to": ".nojekyll"
+    },
+    {
+      "op": "copy",
+      "from": "vendor/fonts/space-grotesk.woff2",
+      "to": "fonts/space-grotesk.woff2"
+    },
+    {
+      "op": "copy",
+      "from": "vendor/fonts/jetbrains-mono.woff2",
+      "to": "fonts/jetbrains-mono.woff2"
+    },
+    {
+      "op": "copy",
+      "from": "licenses/OFL-spacegrotesk.txt",
+      "to": "fonts/OFL-spacegrotesk.txt"
+    },
+    {
+      "op": "copy",
+      "from": "licenses/OFL-jetbrainsmono.txt",
+      "to": "fonts/OFL-jetbrainsmono.txt"
+    },
+    {
+      "op": "copy",
+      "from": "brand/v1.3.6/favicons/favicon.ico",
+      "to": "favicon.ico"
+    },
+    {
+      "op": "copy_tree",
+      "from": "brand/v1.3.6/favicons",
+      "to": "assets/favicons",
+      "exclude": [
+        "favicon.ico"
+      ]
+    },
+    {
+      "op": "copy_tree",
+      "from": "brand/v1.3.6/logos",
+      "to": "assets/logos"
+    },
+    {
+      "op": "copy_tree",
+      "from": "static",
+      "to": "."
+    }
+  ],
+  "passthrough": {
+    "comment": "static/ is shipped byte-identical. It is the GitHub Pages fallback behind the Cloudflare Worker: LNURL names not in LNbits and NIP-05 nostr.json are served from here.",
+    "required_out_paths": [
+      ".well-known/nostr.json",
+      ".well-known/lnurlp/bitmax",
+      "media"
+    ],
+    "json_files": [
+      ".well-known/nostr.json",
+      ".well-known/lnurlp/*"
+    ]
+  },
+  "forbidden_out_paths": [
+    "lnurlp"
+  ],
+  "allowed_external_link_hosts": [
+    "github.com",
+    "x.com",
+    "bitnode.one"
+  ],
+  "tokens_file": "brand/v1.3.6/tokens/design-tokens.json",
+  "contrast_pairs": [
+    {
+      "name": "light text",
+      "mode": "light",
+      "fg": "text",
+      "bg": "bg",
+      "min": 7.0
+    },
+    {
+      "name": "light muted",
+      "mode": "light",
+      "fg": "muted",
+      "bg": "bg",
+      "min": 4.5
+    },
+    {
+      "name": "light link",
+      "mode": "light",
+      "fg": "link",
+      "bg": "bg",
+      "min": 4.5
+    },
+    {
+      "name": "dark text",
+      "mode": "dark",
+      "fg": "text",
+      "bg": "bg",
+      "min": 7.0
+    },
+    {
+      "name": "dark muted",
+      "mode": "dark",
+      "fg": "muted",
+      "bg": "bg",
+      "min": 4.5
+    },
+    {
+      "name": "dark link",
+      "mode": "dark",
+      "fg": "link",
+      "bg": "bg",
+      "min": 4.5
+    },
+    {
+      "name": "ink on acid",
+      "mode": "palette",
+      "fg": "ink",
+      "bg": "acid",
+      "min": 7.0
+    }
+  ],
+  "css_must_match_tokens": {
+    "light": {
+      "--bg": "bg",
+      "--text": "text",
+      "--text-2": "muted",
+      "--line": "line",
+      "--link": "link",
+      "--focus": "focus",
+      "--dot": "dot"
+    },
+    "dark": {
+      "--bg": "bg",
+      "--text": "text",
+      "--text-2": "muted",
+      "--line": "line",
+      "--link": "link",
+      "--focus": "focus",
+      "--dot": "dot"
+    }
+  },
+  "confirmed_contacts": [
+    "lightning:bitmax@bitnode.one",
+    "mailto:mail@bitnode.one"
+  ]
+}

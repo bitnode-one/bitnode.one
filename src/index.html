@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bitnode.one — Own your intelligence.</title>
+<meta name="description" content="Sovereign infrastructure for agentic AI and open protocols. Agents. Protocols. People.">
+<meta name="generator" content="bitnode-site {{VERSION}} ({{COMMIT}})">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F8F7F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151715" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="bitnode.one — Own your intelligence.">
+<meta property="og:description" content="Sovereign infrastructure for agentic AI and open protocols.">
+<meta property="og:url" content="https://bitnode.one/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://bitnode.one/assets/logos/b-signal-on-acid.webp">
+<link rel="icon" href="favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64 128x128 256x256">
+<link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="alternate" hreflang="en" href="https://bitnode.one/?lang=en">
+<link rel="alternate" hreflang="de" href="https://bitnode.one/?lang=de">
+<link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Space Grotesk";src:url(fonts/space-grotesk.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono.woff2) format("woff2");font-weight:100 800;font-display:swap}
+
+/* Tokens V1.3 */
+:root{
+  --acid:#E5FF00;--ink:#171717;--paper:#F8F7F4;--orange:#F7931A;--purple:#8B5CF6;
+  --bg:#F8F7F4;--surface:#FFFFFF;--text:#171717;--text-2:#5D625D;--border:#73796F;--line:#C5C8C1;
+  --link:#6D28D9;--focus:#6D28D9;--dot:#E5E4E1;
+  --sans:"Space Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  --r-ctl:6px;--r-surf:8px;--t:160ms;
+}
+@media (prefers-color-scheme:dark){:root[data-theme=auto]{
+  --bg:#151715;--surface:#222522;--text:#F8F7F4;--text-2:#B8BEB4;--border:#899180;--line:#454B43;
+  --link:#B79AFF;--focus:#E5FF00;--dot:#282A28}}
+:root[data-theme=dark]{
+  --bg:#151715;--surface:#222522;--text:#F8F7F4;--text-2:#B8BEB4;--border:#899180;--line:#454B43;
+  --link:#B79AFF;--focus:#E5FF00;--dot:#282A28}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.5 var(--sans);
+  background-image:radial-gradient(var(--dot) 1.2px,transparent 1.4px);
+  background-size:24px 24px;transition:background-color var(--t),color var(--t)}
+a{color:var(--link);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:14px;letter-spacing:.02em}
+.muted{color:var(--text-2)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;background:var(--acid);color:var(--ink);padding:12px;z-index:10}
+
+/* Header */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:500;font-size:22px;letter-spacing:-.01em;min-height:44px}
+.brand img{height:46px;width:auto;margin-left:-8px}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--text);text-decoration:none;font-family:var(--mono);font-size:15px}
+nav a:hover{background:var(--acid);color:var(--ink)}
+.ctl{display:flex;gap:8px}
+.btn{min-width:44px;min-height:44px;padding:0 12px;border:1px solid var(--border);border-radius:var(--r-ctl);background:var(--surface);color:var(--text);font:500 14px var(--mono);cursor:pointer;transition:background var(--t)}
+.btn:hover{background:var(--acid);color:var(--ink);border-color:var(--ink)}
+.btn svg{width:18px;height:18px;vertical-align:middle}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:96px 0 80px}
+h1{font-weight:500;font-size:clamp(42px,6.4vw,80px);line-height:1.12;letter-spacing:-.025em;margin:0 0 32px}
+.hl{display:inline-block;margin-top:.1em;line-height:1.08;background:var(--acid);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.tag{font-family:var(--mono);font-size:clamp(16px,1.6vw,20px);color:var(--text-2);margin:0 0 8px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.primary{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:var(--r-ctl);background:var(--acid);color:var(--ink);text-decoration:none;font:500 16px var(--mono);border:1px solid var(--ink)}
+.ghost{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:var(--r-ctl);border:1px solid var(--border);color:var(--text);text-decoration:none;font:500 16px var(--mono)}
+.primary:hover,.ghost:hover{transform:translateY(-1px)}
+.signal{width:100%;max-width:440px;justify-self:center}
+.signal img{width:100%;height:auto;display:block}
+/* theme-paired brand images: .lt = for light bg, .dk = for dark bg */
+.dk{display:none!important}
+@media (prefers-color-scheme:dark){:root[data-theme=auto] .lt{display:none!important}:root[data-theme=auto] .dk{display:block!important}}
+:root[data-theme=dark] .lt{display:none!important}:root[data-theme=dark] .dk{display:block!important}
+
+/* Sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-2);margin:0 0 16px}
+h2{font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.02em;margin:0 0 40px}
+.statement{font-size:clamp(22px,2.5vw,32px);line-height:1.35;max-width:30ch;margin:0}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-surf);padding:32px}
+.card h3{font-weight:500;font-size:24px;margin:0 0 8px;letter-spacing:-.01em}
+.card p{margin:0;color:var(--text-2)}
+.fam .card{display:flex;flex-direction:column;gap:20px}
+.mark{min-height:44px;display:flex;align-items:center}
+.mark img{height:52px;width:auto;margin-left:-10px}
+.status{align-self:flex-start;font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--border);border-radius:999px;padding:4px 10px;color:var(--text-2)}
+.status.live{background:var(--acid);color:var(--ink);border-color:var(--ink)}
+.band{background:var(--acid);color:var(--ink);border-radius:var(--r-surf);padding:40px;margin-top:48px}
+.band{display:grid;grid-template-columns:1fr 180px;gap:32px;align-items:center}.band img{width:180px;height:auto;display:block}
+.band p{margin:0;max-width:60ch}
+@media (max-width:860px){.band{grid-template-columns:1fr}.band img{width:140px}}
+.band .big{font:500 clamp(22px,3vw,34px)/1.2 var(--mono);margin-bottom:12px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.contact ul{list-style:none;margin:0;padding:0}
+.contact li{border-bottom:1px solid var(--line)}
+.contact li a{display:flex;justify-content:space-between;min-height:56px;align-items:center;color:var(--text);text-decoration:none;font-family:var(--mono)}
+.contact li a:hover{color:var(--link)}
+
+footer{border-top:1px solid var(--line);padding:40px 0 56px}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-family:var(--mono);font-size:14px}
+.fgrid a{color:var(--text)}
+.fbottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:32px;font-family:var(--mono);font-size:12px;color:var(--text-2)}
+
+/* i18n */
+[data-de]{}
+@media (max-width:860px){
+  .hero,.vm,.contact{grid-template-columns:1fr}
+  .hero{padding:56px 0 48px}.signal{max-width:280px;order:-1}
+  .three,.fgrid{grid-template-columns:1fr}
+  nav{display:none}
+  section{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><img class="lt" src="assets/logos/bitnode.one-horizontal-light.svg" width="660" height="130" alt="bitnode.one"><img class="dk" src="assets/logos/bitnode.one-horizontal-dark.svg" width="660" height="130" alt="bitnode.one"></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#vision">[ vision ]</a></li>
+      <li><a href="#family">[ agents ]</a></li>
+      <li><a href="#family">[ sats ]</a></li>
+      <li><a href="#family">[ connect ]</a></li>
+    </ul></nav>
+    <div class="ctl">
+      <button class="btn" id="lang" type="button" aria-label="Deutsch">DE</button>
+      <button class="btn" id="theme" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap hero" id="top">
+    <div>
+      <h1><span data-i18n="h1a">Own your</span><br><span class="hl" data-i18n="h1b">intelligence.</span></h1>
+      <p class="tag">agents / protocols / people</p>
+      <p class="tag" data-i18n="sub">sovereign infrastructure</p>
+      <div class="cta">
+        <a class="primary" href="#vision" data-i18n="cta1">Read the vision</a>
+        <a class="ghost" href="https://github.com/bitnode-one" rel="noopener">github / bitnode-one</a>
+      </div>
+    </div>
+    <div class="signal">
+      <img class="lt" src="assets/logos/bitnode-mark-signal-light.svg" width="216" height="220" alt="b Signal: the bitnode b, its stem dissolving into grain and pixels">
+      <img class="dk" src="assets/logos/bitnode-mark-signal-dark.svg" width="216" height="220" alt="" aria-hidden="true">
+    </div>
+  </div>
+
+  <section id="vision">
+    <div class="wrap">
+      <p class="eyebrow">01 / vision · mission</p>
+      <h2>Agents. Protocols. People.</h2>
+      <div class="vm">
+        <div><p class="eyebrow">Vision</p><p class="statement" data-i18n="vision">People stay in control of their digital intelligence, their values and their communication.</p></div>
+        <div><p class="eyebrow">Mission</p><p class="statement" data-i18n="mission">Making sovereign infrastructure for agentic AI and open protocols understandable, operable and interoperable.</p></div>
+      </div>
+      <div class="three">
+        <div class="card"><h3>Open systems.</h3><p data-i18n="p1">Interoperable systems instead of closed dependencies.</p></div>
+        <div class="card"><h3>Open source.</h3><p data-i18n="p2">Open code and verifiable tools as a guiding principle.</p></div>
+        <div class="card"><h3>Open signal.</h3><p data-i18n="p3">Direct communication and verifiable information.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="family">
+    <div class="wrap">
+      <p class="eyebrow">02 / family</p>
+      <h2 data-i18n="famh">One family. Clear order.</h2>
+      <div class="three fam" style="margin-top:0">
+        <div class="card">
+          <span class="status live" data-i18n="live">live</span>
+          <div class="mark"><img class="lt" src="assets/logos/bitnode.one-horizontal-light.svg" width="660" height="130" alt="bitnode.one"><img class="dk" src="assets/logos/bitnode.one-horizontal-dark.svg" width="660" height="130" alt="bitnode.one"></div>
+          <p class="mono">[ agents ]</p>
+          <p data-i18n="f1">Umbrella brand and agentic AI infrastructure.</p>
+        </div>
+        <div class="card">
+          <span class="status" data-i18n="planned">planned</span>
+          <div class="mark"><img class="lt" src="assets/logos/bitcash.one-horizontal-light.svg" width="660" height="130" alt="bitcash.one"><img class="dk" src="assets/logos/bitcash.one-horizontal-dark.svg" width="660" height="130" alt="bitcash.one"></div>
+          <p class="mono">[ sats ]</p>
+          <p data-i18n="f2">Planned offering around Bitcoin / Lightning and LNbits.</p>
+        </div>
+        <div class="card">
+          <span class="status" data-i18n="planned">planned</span>
+          <div class="mark"><img class="lt" src="assets/logos/bitchat.one-horizontal-light.svg" width="660" height="130" alt="bitchat.one"><img class="dk" src="assets/logos/bitchat.one-horizontal-dark.svg" width="660" height="130" alt="bitchat.one"></div>
+          <p class="mono">[ connect ]</p>
+          <p data-i18n="f3">Planned communication with Nostr and Matrix.</p>
+        </div>
+      </div>
+      <div class="band"><div>
+        <p class="big">Don't trust. Verify.</p>
+        <p data-i18n="band">Self-hosted where it matters, open where it counts. No vendor lock-in, no black boxes, no rulers — just protocols.</p>
+      </div><img src="assets/logos/b-signal-on-acid.webp" width="864" height="880" alt="" aria-hidden="true" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">03 / open signal</p>
+        <h2 style="margin:0" data-i18n="ch">Talk to the node.</h2>
+      </div>
+      <ul>
+        <li><a href="https://github.com/bitnode-one" rel="noopener"><span>GitHub</span><span aria-hidden="true">→</span></a></li>
+        <li><a href="https://x.com/bitnode_one" rel="noopener"><span>X / @bitnode_one</span><span aria-hidden="true">→</span></a></li>
+        <li><a href="mailto:mail@bitnode.one"><span>mail@bitnode.one</span><span aria-hidden="true">→</span></a></li>
+        <li><a href="lightning:bitmax@bitnode.one"><span>⚡ bitmax@bitnode.one</span><span aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <a href="https://bitnode.one/">bitnode.one</a>
+      <span>bitcash.one</span>
+      <span>bitchat.one</span>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 bitnode.one LLC · Wyoming, USA</span>
+      <span>Open systems. Open source. Open signal. · v{{VERSION}}</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const de={
+    skip:"Zum Inhalt springen",h1a:"Own your",h1b:"intelligence.",sub:"souveräne Infrastruktur",cta1:"Zur Vision",
+    vision:"Menschen behalten die Kontrolle über ihre digitale Intelligenz, ihre Werte und ihre Kommunikation.",
+    mission:"Souveräne Infrastruktur für Agentic AI und offene Protokolle verständlich, betreibbar und anschlussfähig machen.",
+    p1:"Anschlussfähige Systeme statt geschlossener Abhängigkeiten.",
+    p2:"Offener Code und nachvollziehbare Werkzeuge als Leitprinzip.",
+    p3:"Direkte Kommunikation und überprüfbare Informationen.",
+    famh:"Eine Familie. Klare Reihenfolge.",live:"live",planned:"geplant",
+    f1:"Dachmarke und Agentic-AI-Infrastruktur.",
+    f2:"Geplantes Angebot rund um Bitcoin / Lightning und LNbits.",
+    f3:"Geplante Kommunikation mit Nostr und Matrix.",
+    band:"Selbst gehostet, wo es zählt. Offen, wo es wirkt. Kein Vendor-Lock-in, keine Blackbox, keine Herrscher – nur Protokolle.",
+    ch:"Sprich mit dem Node."
+  };
+  const nodes=[...document.querySelectorAll("[data-i18n]")];
+  const en={};nodes.forEach(n=>en[n.dataset.i18n]=n.textContent);
+  const root=document.documentElement,lb=document.getElementById("lang");
+  const setLang=l=>{const d=l==="de"?de:en;nodes.forEach(n=>{const v=d[n.dataset.i18n];if(v)n.textContent=v});
+    root.lang=l;lb.textContent=l==="de"?"EN":"DE";lb.setAttribute("aria-label",l==="de"?"English":"Deutsch");
+    const u=new URL(location);u.searchParams.set("lang",l);history.replaceState(null,"",u)};
+  const q=new URLSearchParams(location.search).get("lang");
+  setLang(q||((navigator.language||"en").startsWith("de")?"de":"en"));
+  lb.onclick=()=>setLang(root.lang==="de"?"en":"de");
+
+  const mq=matchMedia("(prefers-color-scheme: dark)");
+  document.getElementById("theme").onclick=()=>{
+    const cur=root.dataset.theme==="auto"?(mq.matches?"dark":"light"):root.dataset.theme;
+    root.dataset.theme=cur==="dark"?"light":"dark";
+    document.querySelectorAll('meta[name=theme-color]').forEach(m=>{m.content=root.dataset.theme==="dark"?"#151715":"#F8F7F4";m.removeAttribute("media")})};
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+{
+  "schema": 2,
+  "comment": "Every external input of the build. Hash-pinned. Changing a file here without updating its sha256 fails `validate`.",
+  "toolchain": {
+    "python": ">=3.10",
+    "git": ">=2.30",
+    "runtime_deps": "none (Python standard library only)"
+  },
+  "inputs": [
+    {
+      "path": "vendor/fonts/space-grotesk.woff2",
+      "sha256": "0640890476fc1198ab4de571fb658de443c4d85b66466ec09534a8737ab1ce9d",
+      "source": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2",
+      "version": "google-fonts v22, variable 300-700, latin subset",
+      "license": "OFL-1.1",
+      "license_file": "licenses/OFL-spacegrotesk.txt"
+    },
+    {
+      "path": "vendor/fonts/jetbrains-mono.woff2",
+      "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be",
+      "source": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+      "version": "google-fonts v24, variable 100-800, latin subset",
+      "license": "OFL-1.1",
+      "license_file": "licenses/OFL-jetbrainsmono.txt"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/android-chrome-192x192.png",
+      "sha256": "92b6c743cdfb5fe8fb93d5f9ca10c88f304e1da00de8f4af1efaa6462b6d9037",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/android-chrome-192x192.png",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/android-chrome-512x512.png",
+      "sha256": "9618dd69f69783ecea4f207683708527bb9dda5a3b26fedd5701386eb8008325",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/android-chrome-512x512.png",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/apple-touch-icon.png",
+      "sha256": "57c0ff842baabdead09024ca69b36907c29ee7c5838661fbd3e4b64fb84fca68",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/apple-touch-icon.png",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/favicon-16.png",
+      "sha256": "d2aaf003ca950e60316b8bde1a05e8d8969c503c7c51f61ba69badb5f5b93b24",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/favicon-16.png",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/favicon-32.png",
+      "sha256": "919e2f37388aab97f6428c414a33f85fc875219ca038ef473a4c8cbceb3f7d7f",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/favicon-32.png",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/favicon.ico",
+      "sha256": "90a2d547fc7aca3cb26d2525662b9370c2d04746dbfd3b587fe36fe200a68181",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/favicon.ico",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/favicon.svg",
+      "sha256": "440a5bf6cb634a55b439d14a39aac5bb10ee3f2fde069da70724cff03a52802f",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/favicon.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/favicons/maskable-512.png",
+      "sha256": "6cb734c2dc9da78c011363721e9230340cd30e0b8346ae84b71bdeb7f9202a4c",
+      "source": "brand package v1.3.6: dist/brand/assets/favicons/maskable-512.png",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/b-signal-on-acid.webp",
+      "sha256": "a6f9a06b04d13513ef897fd8de59ea2722a76bc6c8577960ca3448539565d1c1",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/b-signal-on-acid.webp",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitcash.one-horizontal-dark.svg",
+      "sha256": "1acb47866508ea97b652e81b1d9588ef9ae6ddeaeeff14d5c4a1ffebb4c11d54",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitcash.one-horizontal-dark.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitcash.one-horizontal-light.svg",
+      "sha256": "7314722d495efb6747fffd29557dff41dc5e6a270e3033b7cac8c91f4c02c372",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitcash.one-horizontal-light.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitchat.one-horizontal-dark.svg",
+      "sha256": "29a3a45661dac5d6cd57b07c024450fe554ad2d7fae5b78cb63a8511c8380156",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitchat.one-horizontal-dark.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitchat.one-horizontal-light.svg",
+      "sha256": "9b154bfaf974bc40f140bff7be20b144ad55eaaea15646965abfafa4812f0ee6",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitchat.one-horizontal-light.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitnode-mark-signal-dark.svg",
+      "sha256": "d2dcddc764f596b12881a2a1fdf14a18b9cb971ffc8c3224d65e8845ff9dc64d",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitnode-mark-signal-dark.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitnode-mark-signal-light.svg",
+      "sha256": "3ff70c31b49766df93db2718d4f9b8b821a91b4c8ce5c52a56093a8a6f31733d",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitnode-mark-signal-light.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitnode.one-horizontal-dark.svg",
+      "sha256": "aa9de88d7bc9dc150eedef4a8ace9f925ebbb048c69582ba147d8f88e516014a",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitnode.one-horizontal-dark.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/logos/bitnode.one-horizontal-light.svg",
+      "sha256": "accf5a5b053c8a903e073fa545a1aa05a7229377adebc660a78f22b2303c362c",
+      "source": "brand package v1.3.6: dist/brand/assets/logos/bitnode.one-horizontal-light.svg",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/tokens/design-tokens.json",
+      "sha256": "306176abcbd0bd4d710f5c63d2926fdb5774a33edd248e9e653c365821304903",
+      "source": "brand package v1.3.6: dist/brand/tokens/design-tokens.json",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    },
+    {
+      "path": "brand/v1.3.6/tokens/logo-metrics.json",
+      "sha256": "8550e521ea4779ff84decfca56727f95fa311136ae3867797ce7298e88a484ad",
+      "source": "brand package v1.3.6: dist/brand/tokens/logo-metrics.json",
+      "version": "V1.3.6",
+      "license": "proprietary, bitnode.one LLC"
+    }
+  ],
+  "brand_package": {
+    "name": "2026-10-14-bitnode.one_CI-CD_brand-v1.3.6.zip",
+    "sha256": "edb393added43c2a71e33728827a418c11e96b145ecc6ae04bbde1aa3fcc76e8",
+    "note": "owner upload 2026-10-14; subset under brand/v1.3.6 extracted byte-identical from dist/brand/"
+  }
+}

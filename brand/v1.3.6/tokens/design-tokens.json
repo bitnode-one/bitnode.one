@@ -1,0 +1,279 @@
+{
+  "version": "1.3.3",
+  "palette": {
+    "acid": "#E5FF00",
+    "paper": "#F8F7F4",
+    "ink": "#171717",
+    "orange": "#F7931A",
+    "purple": "#8B5CF6"
+  },
+  "modes": {
+    "light": {
+      "bg": "#F8F7F4",
+      "surface": "#FFFFFF",
+      "text": "#171717",
+      "muted": "#5D625D",
+      "line": "#C5C8C1",
+      "control": "#73796F",
+      "link": "#6D28D9",
+      "focus": "#6D28D9",
+      "dot": "#E5E4E1",
+      "success": "#23643B",
+      "error": "#B42318",
+      "disabledBg": "#E6E8E2",
+      "disabledText": "#626760"
+    },
+    "dark": {
+      "bg": "#151715",
+      "surface": "#222522",
+      "text": "#F8F7F4",
+      "muted": "#B8BEB4",
+      "line": "#454B43",
+      "control": "#899180",
+      "link": "#B79AFF",
+      "focus": "#E5FF00",
+      "dot": "#282A28",
+      "success": "#89D7A5",
+      "error": "#FF9A90",
+      "disabledBg": "#30352E",
+      "disabledText": "#B8BEB4"
+    }
+  },
+  "type": {
+    "display": {
+      "family": "Space Grotesk",
+      "weight": 500
+    },
+    "body": {
+      "family": "Space Grotesk",
+      "weight": 400
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weight": 400
+    }
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96
+  ],
+  "radius": {
+    "control": 6,
+    "surface": 8
+  },
+  "dotGrid": {
+    "step": 24,
+    "diameter": 1.2
+  },
+  "motion": {
+    "durationMs": 160,
+    "reducedMotion": "no decorative motion"
+  },
+  "contrast": [
+    {
+      "mode": "light",
+      "role": "text",
+      "fg": "#171717",
+      "bg": "#F8F7F4",
+      "ratio": 16.73
+    },
+    {
+      "mode": "light",
+      "role": "muted",
+      "fg": "#5D625D",
+      "bg": "#F8F7F4",
+      "ratio": 5.82
+    },
+    {
+      "mode": "light",
+      "role": "link",
+      "fg": "#6D28D9",
+      "bg": "#F8F7F4",
+      "ratio": 6.63
+    },
+    {
+      "mode": "light",
+      "role": "success",
+      "fg": "#23643B",
+      "bg": "#F8F7F4",
+      "ratio": 6.63
+    },
+    {
+      "mode": "light",
+      "role": "error",
+      "fg": "#B42318",
+      "bg": "#F8F7F4",
+      "ratio": 6.14
+    },
+    {
+      "mode": "light",
+      "role": "disabledText",
+      "fg": "#626760",
+      "bg": "#E6E8E2",
+      "ratio": 4.69
+    },
+    {
+      "mode": "light",
+      "role": "focus",
+      "fg": "#6D28D9",
+      "bg": "#FFFFFF",
+      "ratio": 7.1
+    },
+    {
+      "mode": "dark",
+      "role": "text",
+      "fg": "#F8F7F4",
+      "bg": "#151715",
+      "ratio": 16.82
+    },
+    {
+      "mode": "dark",
+      "role": "muted",
+      "fg": "#B8BEB4",
+      "bg": "#151715",
+      "ratio": 9.49
+    },
+    {
+      "mode": "dark",
+      "role": "link",
+      "fg": "#B79AFF",
+      "bg": "#151715",
+      "ratio": 7.79
+    },
+    {
+      "mode": "dark",
+      "role": "success",
+      "fg": "#89D7A5",
+      "bg": "#151715",
+      "ratio": 10.58
+    },
+    {
+      "mode": "dark",
+      "role": "error",
+      "fg": "#FF9A90",
+      "bg": "#151715",
+      "ratio": 8.82
+    },
+    {
+      "mode": "dark",
+      "role": "disabledText",
+      "fg": "#B8BEB4",
+      "bg": "#30352E",
+      "ratio": 6.61
+    },
+    {
+      "mode": "dark",
+      "role": "focus",
+      "fg": "#E5FF00",
+      "bg": "#222522",
+      "ratio": 13.75
+    },
+    {
+      "mode": "both",
+      "role": "primary button",
+      "fg": "#171717",
+      "bg": "#E5FF00",
+      "ratio": 15.91
+    }
+  ],
+  "brandArchitecture": {
+    "sharedSignal": {
+      "name": "Acid Yellow",
+      "value": "#E5FF00",
+      "use": "umbrella highlight, CTA, shared system signal"
+    },
+    "services": {
+      "bitnode.one": {
+        "accent": "ink",
+        "light": "#171717",
+        "dark": "#F8F7F4",
+        "role": "agents"
+      },
+      "bitcash.one": {
+        "accent": "orange",
+        "value": "#F7931A",
+        "role": "sats"
+      },
+      "bitchat.one": {
+        "accent": "purple",
+        "value": "#8B5CF6",
+        "role": "connect"
+      }
+    },
+    "desktop": "color the icon or a compact brand block; wordmark remains text color",
+    "compact": "12-18 px square accent followed by the written domain"
+  },
+  "logoMetrics": {
+    "version": "1.3.1",
+    "coordinateSystem": {
+      "width": 216,
+      "height": 220,
+      "unit": "u"
+    },
+    "body": {
+      "path": "M68 25 V146 Q68 176 98 176 H128 Q158 176 158 146 V116 Q158 86 128 86 H94",
+      "strokeWidth": 24,
+      "strokeLinecap": "butt",
+      "strokeLinejoin": "round",
+      "stemCenterX": 68,
+      "topCenterY": 25,
+      "baselineCenterY": 176,
+      "curveRadiusCenterline": 30,
+      "curveRadiusOuter": 42,
+      "curveRadiusInner": 18,
+      "visibleBounds": {
+        "xMin": 56,
+        "xMax": 170,
+        "yMin": 25,
+        "yMax": 188
+      }
+    },
+    "opening": {
+      "centerlineNeckLength": 34,
+      "visibleGap": 14
+    },
+    "node": {
+      "x": 157,
+      "y": 27,
+      "width": 28,
+      "height": 28,
+      "cornerRadius": 7
+    },
+    "clearspace": 28,
+    "scale": "targetWidth / 216"
+  },
+  "templates": {
+    "a4": [
+      "letter",
+      "fax",
+      "quote",
+      "invoice"
+    ],
+    "email": [
+      "header",
+      "signature"
+    ],
+    "blog": [
+      "article-header",
+      "callout"
+    ],
+    "social": [
+      "message-square",
+      "quote-portrait"
+    ],
+    "a4Variant": "functional-rail",
+    "emailVariant": "safe-horizontal",
+    "emailDelivery": [
+      "relative-preview",
+      "cid-production",
+      "absolute-https"
+    ]
+  }
+}

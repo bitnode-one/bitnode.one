@@ -1,6 +1,0 @@
-baseURL: 'https://bitnode.one/'
-title: 'bitnode.one⚡'
-languageCode: 'en'
-build:
-  buildStats:
-    enable: true
