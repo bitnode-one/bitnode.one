@@ -1,0 +1,48 @@
+# Build -> validate -> verify determinism -> deploy dist/site to GitHub Pages.
+# PRs and non-main branches: validate only. main: validate + deploy.
+# workflow_dispatch with `ref` redeploys any tag (rollback).
+name: pages
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "git ref to deploy (e.g. v0.3.0). Empty = current branch."
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+          fetch-depth: 1
+      - run: python3 --version
+      - run: python3 scripts/site.py validate
+      - run: python3 scripts/site.py verify
+      - run: cat dist/build-info.json | head -8
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        with:
+          path: dist/site
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
