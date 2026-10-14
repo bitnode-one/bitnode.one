@@ -94,6 +94,9 @@ h2{font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing
 .fam .card{display:flex;flex-direction:column;gap:20px}
 .mark{min-height:44px;display:flex;align-items:center}
 .mark img{height:52px;width:auto;margin-left:-10px}
+a.mark{text-decoration:none;align-self:flex-start;border-radius:var(--r-ctl)}
+a.mark:hover img{opacity:.85}
+.more{display:inline-flex;align-items:center;min-height:44px;font:500 14px var(--mono);color:var(--link)}
 .status{align-self:flex-start;font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--border);border-radius:999px;padding:4px 10px;color:var(--text-2)}
 .status.live{background:var(--acid);color:var(--ink);border-color:var(--ink)}
 .band{background:var(--acid);color:var(--ink);border-radius:var(--r-surf);padding:40px;margin-top:48px}
@@ -190,10 +193,11 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px}
           <p data-i18n="f1">Umbrella brand and agentic AI infrastructure.</p>
         </div>
         <div class="card">
-          <span class="status" data-i18n="planned">planned</span>
-          <div class="mark"><img class="lt" src="assets/logos/bitcash.one-horizontal-light.svg" width="660" height="130" alt="bitcash.one"><img class="dk" src="assets/logos/bitcash.one-horizontal-dark.svg" width="660" height="130" alt="bitcash.one"></div>
+          <span class="status live" data-i18n="live">live</span>
+          <a class="mark" href="https://bitcash.one/" rel="noopener"><img class="lt" src="assets/logos/bitcash.one-horizontal-light.svg" width="660" height="130" alt="bitcash.one"><img class="dk" src="assets/logos/bitcash.one-horizontal-dark.svg" width="660" height="130" alt="bitcash.one"></a>
           <p class="mono">[ sats ]</p>
-          <p data-i18n="f2">Planned offering around Bitcoin / Lightning and LNbits.</p>
+          <p data-i18n="f2">Lightning community node for Bitcoin payments, built on LNbits.</p>
+          <a class="more" href="https://bitcash.one/" rel="noopener" data-i18n="f2cta">Open bitcash.one →</a>
         </div>
         <div class="card">
           <span class="status" data-i18n="planned">planned</span>
@@ -229,7 +233,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px}
   <div class="wrap">
     <div class="fgrid">
       <a href="https://bitnode.one/">bitnode.one</a>
-      <span>bitcash.one</span>
+      <a href="https://bitcash.one/" rel="noopener">bitcash.one</a>
       <span>bitchat.one</span>
     </div>
     <div class="fbottom">
@@ -250,7 +254,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px}
     p3:"Direkte Kommunikation und überprüfbare Informationen.",
     famh:"Eine Familie. Klare Reihenfolge.",live:"live",planned:"geplant",
     f1:"Dachmarke und Agentic-AI-Infrastruktur.",
-    f2:"Geplantes Angebot rund um Bitcoin / Lightning und LNbits.",
+    f2:"Lightning-Community-Node für Bitcoin-Zahlungen, auf Basis von LNbits.",f2cta:"bitcash.one öffnen →",
     f3:"Geplante Kommunikation mit Nostr und Matrix.",
     band:"Selbst gehostet, wo es zählt. Offen, wo es wirkt. Kein Vendor-Lock-in, keine Blackbox, keine Herrscher – nur Protokolle.",
     ch:"Sprich mit dem Node."

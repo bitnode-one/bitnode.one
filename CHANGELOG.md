@@ -5,6 +5,14 @@ MAJOR = route/structure break, MINOR = visible content or design, PATCH = fixes 
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-14
+
+### Changed
+- bitcash.one status `planned` → `live`; logo, CTA "Open bitcash.one →" and footer entry link to https://bitcash.one/
+  (verified HTTP 200, title "bitcash.one - Lightning Community Node").
+- bitcash.one description EN/DE updated from "planned offering" to live community node.
+- `bitcash.one` added to allowed external link hosts.
+
 ## [0.3.0] - 2026-10-14
 
 ### Added
