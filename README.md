@@ -1,66 +1,66 @@
 # bitnode.one
 
-One-Pager für [bitnode.one](https://bitnode.one/), Brand System V1.3.6, EN/DE, Light/Dark.
-Dieses Repo ist die einzige Quelle der Wahrheit (SoT): gleicher Commit, gleiche Bytes.
+One-pager for [bitnode.one](https://bitnode.one/), brand system V1.3.6, EN/DE, light/dark.
+This repo is the single source of truth (SoT): same commit in, same bytes out.
 
 ## Setup
 
-Voraussetzungen: `git` und `python3` ≥ 3.10. Kein Node, kein Hugo, kein pip.
+Requirements: `git` and `python3` ≥ 3.10. No Node, no Hugo, no pip.
 
 ```sh
 git clone git@github.com:bitnode-one/bitnode.one.git && cd bitnode.one
-python3 scripts/site.py validate    # Inputs prüfen, bauen, Output prüfen
-python3 scripts/site.py verify      # zweimal bauen, Hashes müssen gleich sein
+python3 scripts/site.py validate    # check inputs, build, check output
+python3 scripts/site.py verify      # build twice, hashes must match
 ```
 
-Windows: `py scripts\site.py validate`. WSL: Repo unter `~/`, nicht unter `/mnt/c`.
-Ausgabe: `dist/site/` (wird nicht committet).
+Windows: `py scripts\site.py validate`. WSL: keep the repo under `~/`, not `/mnt/c`.
+Output: `dist/site/` (not committed).
 
-## Wo was liegt
+## Where things live
 
-| Pfad | Inhalt |
+| Path | Content |
 |---|---|
-| `src/index.html` | Seite und Texte EN/DE |
-| `static/` | `.well-known` (NIP-05, LNURL-Fallbacks) und `media/`, wird byte-genau ausgeliefert |
-| `brand/v1.3.6/` | Logos, Favicons, Tokens, nicht von Hand ändern |
-| `VERSION`, `CHANGELOG.md`, `BACKLOG.md` | Version, Änderungen, offene Punkte |
+| `src/index.html` | page and EN/DE copy |
+| `static/` | `.well-known` (NIP-05, LNURL fallbacks) and `media/`, shipped byte-identical |
+| `brand/v1.3.6/` | logos, favicons, tokens; do not edit by hand |
+| `VERSION`, `CHANGELOG.md`, `BACKLOG.md` | version, changes, open items |
 
-## Release (regulär)
+## Release (regular)
 
 ```sh
 git switch main && git pull --ff-only
-git switch -c feat/<thema>
-# ändern, Zeile unter [Unreleased] in CHANGELOG.md ergänzen
+git switch -c feat/<topic>
+# edit, add a line under [Unreleased] in CHANGELOG.md
 python3 scripts/site.py validate
-git commit -am "feat: <thema>" && git push -u origin feat/<thema>
+git commit -am "feat: <topic>" && git push -u origin feat/<topic>
 ```
 
-1. PR öffnen → CI `pages / build` grün → Merge nach `main` → automatischer Deploy mit Smoke-Test.
-2. Version setzen: `VERSION` erhöhen, in `CHANGELOG.md` `[Unreleased]` → `[X.Y.Z] - YYYY-MM-DD`.
-3. Taggen:
+1. Open a PR → CI `pages / build` green → merge to `main` → automatic deploy with smoke test.
+2. Set the version: bump `VERSION`, rename `[Unreleased]` → `[X.Y.Z] - YYYY-MM-DD` in `CHANGELOG.md`.
+3. Tag:
 
 ```sh
 git commit -am "release: vX.Y.Z" && git push
 python3 scripts/site.py release && git push --follow-tags
 ```
 
-## Quick-Fix
+## Quick fix
 
 ```sh
 git switch main && git pull --ff-only
-# Datei ändern
-python3 scripts/site.py validate && git commit -am "fix: <was>" && git push
+# edit the file
+python3 scripts/site.py validate && git commit -am "fix: <what>" && git push
 ```
 
-Auf `main` wird sofort deployt. CHANGELOG-Zeile im nächsten Release nachtragen.
+Pushing to `main` deploys immediately. Add the CHANGELOG line in the next release.
 
 ## Rollback
 
-Actions → `pages` → Run workflow → `ref` = letzter guter Tag, z. B. `v0.4.1`.
+Actions → `pages` → Run workflow → `ref` = last good tag, e.g. `v0.4.1`.
 
-## Nach dem Deploy
+## After deploy
 
-Der Deploy-Job prüft die Live-Routen selbst und wird rot, wenn etwas fehlt. Manuell:
+The deploy job checks the live routes itself and fails if anything is missing. Manually:
 
 ```sh
 curl -s https://bitnode.one/ | grep -o 'bitnode-site [0-9.]* ([0-9a-f]*)'
@@ -68,10 +68,10 @@ curl -s https://bitnode.one/.well-known/lnurlp/albihub | grep -o payRequest
 curl -s https://bitnode.one/.well-known/nostr.json | head -c 80
 ```
 
-## Harte Regeln
+## Hard rules
 
-- `/lnurlp/*` gehört dem Worker → LNbits und darf nie im Build landen.
-- `/.well-known/*` kommt aus `static/`. `include-hidden-files: true` im Workflow nie entfernen.
-- Keine externen Requests zur Laufzeit. Fonts und Bilder sind lokal.
+- `/lnurlp/*` belongs to the Worker → LNbits and must never appear in the build.
+- `/.well-known/*` comes from `static/`. Never remove `include-hidden-files: true` from the workflow.
+- No external requests at runtime. Fonts and images are local.
 
 Details: [docs/RELEASING.md](docs/RELEASING.md) · [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/DECISIONS.md](docs/DECISIONS.md)
