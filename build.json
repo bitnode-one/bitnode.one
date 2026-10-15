@@ -161,7 +161,7 @@
     }
   },
   "confirmed_contacts": [
-    "lightning:bitmax@bitnode.one",
-    "mailto:mail@bitnode.one"
+    "lightning:bitnode@bitcash.one",
+    "mailto:hello@bitnode.one"
   ]
 }
