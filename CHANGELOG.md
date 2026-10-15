@@ -5,6 +5,9 @@ MAJOR = route/structure break, MINOR = visible content or design, PATCH = fixes 
 
 ## [Unreleased]
 
+### Changed
+- README rewritten as short German setup and release guide.
+
 ### Fixed
 - Smoke test read `VERSION` in the deploy job (no checkout) and failed after a successful deploy; now matches the deployed commit id. Skipped on rollback dispatch.
 

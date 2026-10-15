@@ -1,61 +1,77 @@
-# bitnode-site
+# bitnode.one
 
-One-pager for [bitnode.one](https://bitnode.one/). Brand system V1.3 "Open Signal". EN / DE, light / dark.
+One-Pager für [bitnode.one](https://bitnode.one/), Brand System V1.3.6, EN/DE, Light/Dark.
+Dieses Repo ist die einzige Quelle der Wahrheit (SoT): gleicher Commit, gleiche Bytes.
 
-This folder is the single source of truth (SoT). Everything that ships is derived from files tracked here,
-pinned by hash, built by one stdlib-only Python script. Same commit in, same bytes out.
+## Setup
 
-## Quick start
+Voraussetzungen: `git` und `python3` ≥ 3.10. Kein Node, kein Hugo, kein pip.
 
 ```sh
-python3 scripts/site.py validate   # check inputs, build, validate output
-python3 scripts/site.py verify     # build twice, require identical digests
+git clone git@github.com:bitnode-one/bitnode.one.git && cd bitnode.one
+python3 scripts/site.py validate    # Inputs prüfen, bauen, Output prüfen
+python3 scripts/site.py verify      # zweimal bauen, Hashes müssen gleich sein
 ```
 
-Windows: `py scripts\site.py validate`. No `make`, no Node, no Hugo, no pip install.
+Windows: `py scripts\site.py validate`. WSL: Repo unter `~/`, nicht unter `/mnt/c`.
+Ausgabe: `dist/site/` (wird nicht committet).
 
-## Layout
+## Wo was liegt
 
-| Path | Role | Edited by hand |
-|---|---|---|
-| `src/` | page source (`index.html` template, `favicon.svg`) | yes |
-| `brand/v1.3.6/` | locked subset of brand package V1.3.6, unmodified | no, replace + relock |
-| `static/` | byte-exact passthrough: `.well-known` (NIP-05, LNURL fallbacks), `media/` | yes, content |
-| `vendor/fonts/` | self-hosted webfonts, hash-pinned | no, `fetch` |
-| `licenses/` | third-party licenses (OFL) | no |
-| `deps.lock.json` | every external input: path, sha256, source, license | on input change |
-| `build.json` | declarative build plan, forbidden paths, contrast pairs | on pipeline change |
-| `scripts/site.py` | fetch / check / build / validate / verify / release | rarely |
-| `VERSION` | SemVer of the site | per release |
-| `CHANGELOG.md` | what changed, per version | per change |
-| `BACKLOG.md` | open work, prioritised | anytime |
-| `docs/` | architecture, routing, decisions, `RELEASING.md`, brand PDF | on decision |
-| `dist/` | build output, gitignored, disposable | never |
+| Pfad | Inhalt |
+|---|---|
+| `src/index.html` | Seite und Texte EN/DE |
+| `static/` | `.well-known` (NIP-05, LNURL-Fallbacks) und `media/`, wird byte-genau ausgeliefert |
+| `brand/v1.3.6/` | Logos, Favicons, Tokens, nicht von Hand ändern |
+| `VERSION`, `CHANGELOG.md`, `BACKLOG.md` | Version, Änderungen, offene Punkte |
 
-## Build output
+## Release (regulär)
 
-```
-dist/site/                         deployable static site
-dist/bitnode-site-X.Y.Z.tar.gz     reproducible archive (sorted, fixed mtime/owner)
-dist/SHA256SUMS                    per-file and archive hashes
-dist/build-info.json               version, commit, SOURCE_DATE_EPOCH, tree hash
+```sh
+git switch main && git pull --ff-only
+git switch -c feat/<thema>
+# ändern, Zeile unter [Unreleased] in CHANGELOG.md ergänzen
+python3 scripts/site.py validate
+git commit -am "feat: <thema>" && git push -u origin feat/<thema>
 ```
 
-Timestamps come from the last commit (`git log -1 --format=%ct`), never the wall clock.
-A dirty tree is marked `-dirty` in the commit id and `release` refuses it.
+1. PR öffnen → CI `pages / build` grün → Merge nach `main` → automatischer Deploy mit Smoke-Test.
+2. Version setzen: `VERSION` erhöhen, in `CHANGELOG.md` `[Unreleased]` → `[X.Y.Z] - YYYY-MM-DD`.
+3. Taggen:
 
-## Release
+```sh
+git commit -am "release: vX.Y.Z" && git push
+python3 scripts/site.py release && git push --follow-tags
+```
 
-1. Change files. Add an entry under `## [Unreleased]` in `CHANGELOG.md`.
-2. Bump `VERSION`, rename `[Unreleased]` to `[X.Y.Z] - YYYY-MM-DD`.
-3. `git commit -am "release: vX.Y.Z"`
-4. `python3 scripts/site.py release` → validates, verifies determinism, tags `vX.Y.Z`.
-5. `git push --follow-tags`
+## Quick-Fix
 
-## Hard rules
+```sh
+git switch main && git pull --ff-only
+# Datei ändern
+python3 scripts/site.py validate && git commit -am "fix: <was>" && git push
+```
 
-- `/lnurlp/*` belongs to the Cloudflare Worker → LNbits; the build fails if it appears in `dist/site`.
-- `/.well-known/lnurlp/*` is Worker-first, Pages-fallback; `/.well-known/nostr.json` is Pages. Both live in
-  `static/`, ship byte-identical and are JSON-validated. See `docs/ARCHITECTURE.md`.
-- No runtime requests to third parties. Fonts and images are local. The validator fails on external loads.
-- Brand files are never edited in place. New brand version = new `brand/vX.Y.Z/` + relock.
+Auf `main` wird sofort deployt. CHANGELOG-Zeile im nächsten Release nachtragen.
+
+## Rollback
+
+Actions → `pages` → Run workflow → `ref` = letzter guter Tag, z. B. `v0.4.1`.
+
+## Nach dem Deploy
+
+Der Deploy-Job prüft die Live-Routen selbst und wird rot, wenn etwas fehlt. Manuell:
+
+```sh
+curl -s https://bitnode.one/ | grep -o 'bitnode-site [0-9.]* ([0-9a-f]*)'
+curl -s https://bitnode.one/.well-known/lnurlp/albihub | grep -o payRequest
+curl -s https://bitnode.one/.well-known/nostr.json | head -c 80
+```
+
+## Harte Regeln
+
+- `/lnurlp/*` gehört dem Worker → LNbits und darf nie im Build landen.
+- `/.well-known/*` kommt aus `static/`. `include-hidden-files: true` im Workflow nie entfernen.
+- Keine externen Requests zur Laufzeit. Fonts und Bilder sind lokal.
+
+Details: [docs/RELEASING.md](docs/RELEASING.md) · [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/DECISIONS.md](docs/DECISIONS.md)
