@@ -5,7 +5,13 @@ MAJOR = route/structure break, MINOR = visible content or design, PATCH = fixes 
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-10-15
+
 ### Changed
+- Contact e-mail `mail@bitnode.one` → `hello@bitnode.one` (MX: SimpleLogin).
+- Lightning address `bitmax@bitnode.one` → `bitnode@bitcash.one` (verified: payRequest, identifier matches).
+- Section `02 / family` → `02 / agentic hub`; claim "One hub. One agentic constellation." /
+  DE "Ein Hub. Eine agentische Konstellation."
 - README rewritten as a short setup and release guide.
 
 ### Fixed
