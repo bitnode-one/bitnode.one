@@ -5,7 +5,7 @@ MAJOR = route/structure break, MINOR = visible content or design, PATCH = fixes 
 
 ## [Unreleased]
 
-## [0.4.2] - 2026-10-15
+## [0.5.0] - 2026-10-15
 
 ### Changed
 - Contact e-mail `mail@bitnode.one` → `hello@bitnode.one` (MX: SimpleLogin).
