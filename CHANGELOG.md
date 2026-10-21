@@ -5,6 +5,20 @@ MAJOR = route/structure break, MINOR = visible content or design, PATCH = fixes 
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-21
+
+### Added
+- Contact: "Nostr / nostr@bitnode.one" → https://ditto.pub/nostr@bitnode.one (NIP-05 `nostr` resolves live);
+  `ditto.pub` added to allowed link hosts.
+- `static/.well-known/nostr.json`: name `nostr` (commit 0a4e4d0).
+
+### Changed
+- X handle `@bitnode_one` → `@bitnodeone`, link https://x.com/bitnodeone.
+
+### Fixed
+- Smoke test false negative: `curl | grep -q` under `pipefail` failed with curl exit 23 once grep closed
+  the pipe early (run 39240165047, deploy itself succeeded). Responses are now captured before matching.
+
 ## [0.5.0] - 2026-10-15
 
 ### Changed

@@ -55,10 +55,11 @@ jobs:
           sleep 20
           ver="${GITHUB_SHA:0:12}"   # deploy job has no checkout; page exposes the deployed commit
           for i in 1 2 3 4 5 6; do
-            curl -fsS "https://bitnode.one/?cb=$GITHUB_RUN_ID-$i" | grep -q "($ver)" && break
+            page=$(curl -fsS "https://bitnode.one/?cb=$GITHUB_RUN_ID-$i" || true)
+            grep -qF "($ver)" <<<"$page" && break
             [ "$i" = 6 ] && { echo "commit $ver not live"; exit 1; }; sleep 15
           done
           curl -fsS https://bitnode.one/.well-known/nostr.json | python3 -c "import json,sys; assert json.load(sys.stdin)['names']"
-          curl -fsS https://bitnode.one/.well-known/lnurlp/albihub | grep -q payRequest
-          curl -fsS https://bitnode.one/.well-known/lnurlp/bitmax  | grep -q payRequest
+          grep -q payRequest <<<"$(curl -fsS https://bitnode.one/.well-known/lnurlp/albihub)"
+          grep -q payRequest <<<"$(curl -fsS https://bitnode.one/.well-known/lnurlp/bitmax)"
           echo "smoke OK"
