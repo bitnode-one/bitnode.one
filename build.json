@@ -86,7 +86,8 @@
     "github.com",
     "x.com",
     "bitnode.one",
-    "bitcash.one"
+    "bitcash.one",
+    "ditto.pub"
   ],
   "tokens_file": "brand/v1.3.6/tokens/design-tokens.json",
   "contrast_pairs": [
